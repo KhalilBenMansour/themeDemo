@@ -1,3 +1,8 @@
+/*start main rules*/
+body {
+  background-color: #eee;
+}
+/*end main rules*/
 /* start footer */
 .footer {
   background-color: #333;
@@ -9,3 +14,22 @@
   width: 100%;
 }
 /* end footer  */
+/* start posts  */
+.main-post {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.main-post h3 {
+  color: #777;
+  margin: 0 0 10px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+.main-post img {
+  display: block;
+  margin: 10px 0 10px;
+}
+
+/* end posts  */
