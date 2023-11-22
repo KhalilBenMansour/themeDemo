@@ -91,7 +91,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 function slug_add_styles()
 {
     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . "/css/bootstrap.min.css");
-    wp_enqueue_style('fontawesome-css', get_template_directory_uri() . "/css/fontawesome.min.css");
+    wp_enqueue_style('fontawesome-css', get_template_directory_uri() . "/css/all.min.css");
     wp_enqueue_style('main', get_template_directory_uri() . "/css/main.css");
 };
 
@@ -110,6 +110,8 @@ function slug_add_scripts()
     wp_enqueue_script('jquery');
     // Add Bootstrap Script File
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array('jquery'), false, true);
+    // Add font awesome Script File
+    wp_enqueue_script('font-awesome-js', get_template_directory_uri() . '/js/all.min.js', array(), false, true);
     // Add Main File Script
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), false, true);
     // Add Html5shiv For Old Browsers
