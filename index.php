@@ -21,6 +21,10 @@
                             <i class="fa-regular fa-comments fa-sm" style='color:#999;'></i>
                             <?php comments_popup_link('0 Comments', 'One Comment', '% Comments', 'comment-url', 'Comments disabled') ?>,
                         </span>
+                        <?php the_post_thumbnail('', ['class' => 'img-fluid img-thumbnail', 'title' => 'Featured Image']); ?>
+                        <p class="post-content">
+                            <?php the_excerpt(); ?>
+                        </p>
                         <hr>
                         <p class="categories">
                             <i class="fa-solid fa-tags fa-sm" style='color:#999;'></i>
@@ -34,17 +38,5 @@
         ?>
     </div>
 </div>
-
-<!-- <div class="col-sm-6">
-            <div class="main-post">
-                <span class="post-comments"><i class="fa-regular fa-comments fa-sm" style='color:#999;'></i> 20 comments, </span>
-                <img class="img-fluid img-thumbnail" src="https://placehold.co/600x200" alt="">
-                <p class="post-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam magni, inventore voluptatem omnis dicta sapiente ipsam maiores saepe id architecto libero adipisci unde repellat ex aut veniam accusantium ratione. Deserunt.
-                </p>
-                
-            </div>
-        </div> -->
-
 
 <?php get_footer(); ?>
