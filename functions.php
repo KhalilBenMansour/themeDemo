@@ -151,6 +151,21 @@ function khalil_bootstrap_menu()
 }
 
 /**
+ * Customize the Excerpt word length & Read more dots
+ */
+function khalil_excerpt_custom_length()
+{
+    return 20;
+}
+add_filter('excerpt_length', 'khalil_excerpt_custom_length');
+
+function khalil_excerpt_custom_more()
+{
+    return ' ...';
+}
+add_filter('excerpt_more', 'khalil_excerpt_custom_more');
+
+/**
  * Add action hooks
  */
 //Add css styles
