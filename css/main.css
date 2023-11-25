@@ -15,6 +15,9 @@ body {
 }
 /* end footer  */
 /* start posts  */
+.container {
+  margin-bottom: 80px;
+}
 .main-post {
   padding: 10px;
   background-color: #fff;
