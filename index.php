@@ -26,9 +26,19 @@
                             <?php the_excerpt(); ?>
                         </p>
                         <hr>
-                        <p class="categories">
+                        <p class="post-categories">
                             <i class="fa-solid fa-tags fa-sm" style='color:#999;'></i>
                             <?php the_category(', '); ?>
+                        </p>
+                        <p class="post-tags">
+                            <?php
+                            if (has_tag()) {
+
+                                the_tags();
+                            } else {
+                                echo 'Tags: There\'s no Tags';
+                            }
+                            ?>
                         </p>
                     </div>
                 </div>
