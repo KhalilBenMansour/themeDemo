@@ -45,6 +45,19 @@
         <?php
             endwhile;
         endif;
+        if (get_previous_posts_link()) {
+
+            previous_posts_link('Prev');
+        } else {
+            echo 'No Previous Page';
+        }
+        if (get_next_posts_link()) {
+
+            next_posts_link('Next');
+        } else {
+            echo 'No Next Page';
+        }
+
         ?>
     </div>
 </div>
