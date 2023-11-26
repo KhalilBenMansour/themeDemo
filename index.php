@@ -22,9 +22,9 @@
                             <?php comments_popup_link('0 Comments', 'One Comment', '% Comments', 'comment-url', 'Comments disabled') ?>,
                         </span>
                         <?php the_post_thumbnail('', ['class' => 'img-fluid img-thumbnail', 'title' => 'Featured Image']); ?>
-                        <p class="post-content">
+                        <div class="post-content">
                             <?php the_excerpt(); ?>
-                        </p>
+                        </div>
                         <hr>
                         <p class="post-categories">
                             <i class="fa-solid fa-tags fa-sm" style='color:#999;'></i>
@@ -42,24 +42,29 @@
                         </p>
                     </div>
                 </div>
+
         <?php
             endwhile;
         endif;
-        if (get_previous_posts_link()) {
-
-            previous_posts_link('Prev');
-        } else {
-            echo 'No Previous Page';
-        }
-        if (get_next_posts_link()) {
-
-            next_posts_link('Next');
-        } else {
-            echo 'No Next Page';
-        }
 
         ?>
+
     </div>
+    <?php
+    echo '<div class="post-pagination">';
+    if (get_previous_posts_link()) {
+
+        previous_posts_link('<i class="fa-solid fa-chevron-left fa-fw fa-sm "></i>Prev');
+    } else {
+        echo '<span class="previous-span">Prev</span>';
+    }
+    if (get_next_posts_link()) {
+
+        next_posts_link('Next<i class="fa-solid fa-chevron-right fa-fw fa-sm "></i>');
+    } else {
+        echo '<span class="next-span">Next</span>';
+    }
+    echo '</div>'; ?>
 </div>
 
 <?php get_footer(); ?>
