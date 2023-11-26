@@ -43,5 +43,35 @@ body {
   line-height: 1.7;
   color: #888;
 }
+.post-pagination {
+  margin: 20px auto 30px;
+  width: 400px;
+  text-align: center;
+}
+
+.post-pagination a,
+.post-pagination span {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.post-pagination a:first-of-type {
+  margin-right: 10px;
+}
+.post-pagination a:hover {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+.post-pagination span {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.post-pagination .previous-span {
+  margin-right: 10px;
+}
 
 /* end posts  */
