@@ -3,7 +3,10 @@
 
 <head>
     <meta charset=<?php bloginfo('charset') ?>>
-    <title><?php bloginfo('name'); ?></title>
+    <title><?php
+            wp_title('|', true, 'right');
+            bloginfo('name');
+            ?></title>
     <link rel="pingback" hrefs=<?php bloginfo('pingback_url'); ?>>
 </head>
 <?php wp_head(); ?>
