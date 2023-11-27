@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="container">
+<div class="container home-page">
     <div class="row">
         <?php
         if (have_posts()) :
@@ -46,25 +46,24 @@
         <?php
             endwhile;
         endif;
+        echo '<div class="post-pagination">';
+        if (get_previous_posts_link()) { //check if previous page  exist
 
+            previous_posts_link('<i class="fa-solid fa-chevron-left fa-fw fa-sm "></i>Prev');
+        } else {
+            echo '<span class="previous-span">Prev</span>';
+        }
+        if (get_next_posts_link()) {
+
+            next_posts_link('Next<i class="fa-solid fa-chevron-right fa-fw fa-sm "></i>');
+        } else {
+            echo '<span class="next-span">Next</span>';
+        }
+        echo '</div>';
         ?>
 
     </div>
-    <?php
-    echo '<div class="post-pagination">';
-    if (get_previous_posts_link()) {
 
-        previous_posts_link('<i class="fa-solid fa-chevron-left fa-fw fa-sm "></i>Prev');
-    } else {
-        echo '<span class="previous-span">Prev</span>';
-    }
-    if (get_next_posts_link()) {
-
-        next_posts_link('Next<i class="fa-solid fa-chevron-right fa-fw fa-sm "></i>');
-    } else {
-        echo '<span class="next-span">Next</span>';
-    }
-    echo '</div>'; ?>
 </div>
 
 <?php get_footer(); ?>
