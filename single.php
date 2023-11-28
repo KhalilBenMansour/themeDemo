@@ -58,7 +58,9 @@
     } else {
         echo '<span class="next-span">Next Article</span>';
     }
-    echo '</div>'; ?>
+    echo '</div>';
+    echo '<hr class="comment-separator"/>';
+    comments_template() ?>
 </div>
 
 <?php get_footer(); ?>
