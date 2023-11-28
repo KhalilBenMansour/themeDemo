@@ -144,3 +144,29 @@ body {
 }
 
 /* end single post */
+/* start comments list  */
+.comments-list ul,
+.comments-list ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.comments-list > .comment {
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+.comments-list > .comment > .children > .comment {
+  padding: 10px;
+  background-color: #eee;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+.comments-list > .comment > .children > .comment .comment {
+  padding: 10px;
+  background-color: #ddd;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+}
+/* end comments list  */
