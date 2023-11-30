@@ -10,9 +10,7 @@
                         <?php the_title(); ?>
                     </a>
                 </h3>
-                <span class="post-author">
-                    <i class="fa-regular fa-user fa-sm" style='color:#999;'></i> <?php the_author_posts_link(); ?>,
-                </span>
+
                 <span class="post-date">
                     <i class="fa-regular fa-calendar fa-sm" style='color:#999;'></i> <?php the_time('F j, Y'); ?>,
                 </span>
@@ -44,7 +42,42 @@
             </div>
     <?php
         endwhile;
-    endif;
+    endif; ?>
+    <div class="author-section">
+        <div class="row ">
+
+            <div class="col-md-2">
+                <?php
+                $avatar_arguments = array(
+                    'class' => 'img-thumbnail mx-auto d-block'
+                );
+                echo get_avatar(get_the_author_meta('ID'), 128, '', 'User avatar', $avatar_arguments);
+                ?>
+            </div>
+            <div class="col-md-10 author-info">
+                <h4>
+                    <?php the_author_meta('first_name') ?>
+                    <?php the_author_meta('last_name') ?>
+                    (<span class="nickname"><?php the_author_meta('nickname') ?></span>)
+                </h4>
+                <?php
+                if (get_the_author_meta('description')) : ?>
+                    <p>
+                        <?php the_author_meta('description') ?>
+                    </p>
+                <?php else :
+                    echo 'There is no biography';
+                endif; ?>
+            </div>
+        </div>
+        <hr>
+        <p class="author-stats">
+            User Posts Count: <span class="posts-count"><?php echo count_user_posts(get_the_author_meta('ID')) ?></span>,
+            User Profile Link:<?php the_author_posts_link() ?>
+        </p>
+    </div>
+    <?php
+    echo '<hr class="comment-separator"/>';
     echo '<div class="post-pagination">';
     if (get_previous_post_link()) { // check if previous post exists
 
