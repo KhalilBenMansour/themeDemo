@@ -43,31 +43,38 @@
     <?php
         endwhile;
     endif; ?>
-    <div class="row author-section">
+    <div class="author-section">
+        <div class="row ">
 
-        <div class="col-md-2">
-            <?php
-            $avatar_arguments = array(
-                'class' => 'img-thumbnail mx-auto d-block'
-            );
-            echo get_avatar(get_the_author_meta('ID'), 128, '', 'User avatar', $avatar_arguments);
-            ?>
+            <div class="col-md-2">
+                <?php
+                $avatar_arguments = array(
+                    'class' => 'img-thumbnail mx-auto d-block'
+                );
+                echo get_avatar(get_the_author_meta('ID'), 128, '', 'User avatar', $avatar_arguments);
+                ?>
+            </div>
+            <div class="col-md-10 author-info">
+                <h4>
+                    <?php the_author_meta('first_name') ?>
+                    <?php the_author_meta('last_name') ?>
+                    (<span class="nickname"><?php the_author_meta('nickname') ?></span>)
+                </h4>
+                <?php
+                if (get_the_author_meta('description')) : ?>
+                    <p>
+                        <?php the_author_meta('description') ?>
+                    </p>
+                <?php else :
+                    echo 'There is no biography';
+                endif; ?>
+            </div>
         </div>
-        <div class="col-md-10 author-info">
-            <h4>
-                <?php the_author_meta('first_name') ?>
-                <?php the_author_meta('last_name') ?>
-                (<span class="nickname"><?php the_author_meta('nickname') ?></span>)
-            </h4>
-            <?php
-            if (get_the_author_meta('description')) : ?>
-                <p>
-                    <?php the_author_meta('description') ?>
-                </p>
-            <?php else :
-                echo 'There is no biography';
-            endif; ?>
-        </div>
+        <hr>
+        <p class="author-stats">
+            User Posts Count: <span class="posts-count"><?php echo count_user_posts(get_the_author_meta('ID')) ?></span>,
+            User Profile Link:<?php the_author_posts_link() ?>
+        </p>
     </div>
     <?php
     echo '<hr class="comment-separator"/>';
