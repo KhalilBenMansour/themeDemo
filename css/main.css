@@ -255,3 +255,52 @@ I .comments-list .comment .says {
   margin-top: 6px;
 }
 /* end comments list  */
+/* start authot page  */
+
+.author-page .profile-header {
+  font-size: 60px;
+  margin: 30px 0;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+.author-page .author-main-info {
+  background-color: #fff;
+  padding: 40px 20px;
+  font-size: 18px;
+  border: 1px solid #dedede;
+  margin-bottom: 20px;
+}
+.author-page .author-main-info .author-names {
+  line-height: 1.5;
+  color: #666;
+  margin-top: 10px;
+}
+.author-page .author-main-info .author-names span {
+  display: inline-block;
+  min-width: 120px;
+}
+.author-page .author-main-info hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.author-page .author-main-info p {
+  color: #777;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.author-page .author-stats .stats {
+  background-color: #fff;
+  padding: 20px;
+  font-size: 14px;
+  border: 1px solid #dedede;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.author-page .author-stats .stats span {
+  display: block;
+  font-size: 50px;
+  margin-top: 10px;
+}
+/* end authot page  */
