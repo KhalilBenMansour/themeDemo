@@ -80,7 +80,15 @@
     );
     $author_posts = new WP_Query($author_posts_arguments);
     if ($author_posts->have_posts()) : ?>
-        <h3 class="author-posts-title"> Latest [<?php echo $author_posts_per_page ?>] posts of <?php the_author_meta('nickname') ?></h3>
+        <h3 class="author-posts-title">
+            <?php if (count_user_posts(get_the_author_meta('ID')) >= $author_posts_per_page) {
+                echo 'latest ' . $author_posts_per_page . ' Posts of ';
+                the_author_meta('nickname');
+            } else {
+                echo 'Latest Posts of ';
+                the_author_meta('nickname');
+            } ?>
+        </h3>
         <?php
         while ($author_posts->have_posts()) : $author_posts->the_post(); ?>
             <div class="author-posts">
@@ -110,10 +118,51 @@
                 <!-- end row  -->
             </div>
             <!-- <div class="clearFix"></div> -->
-    <?php
+        <?php
         endwhile;
     endif;
     wp_reset_postdata();
+    $comments_per_page = 4;
+    $comments_arguments = array(
+        'user_id' => get_the_author_meta('ID'),
+        'status' => 'approve',
+        'number' => $comments_per_page,
+        'post-status' => 'publish',
+        'post-type' => 'post'
+    );
+    $comments = get_comments($comments_arguments);
+    if ($comments) { ?>
+        <h3 class="author-comments-title">
+            <?php if (get_comments($commentscount_arguments) >= $comments_per_page) {
+                echo 'latest ' . $comments_per_page . ' Comments of ';
+                the_author_meta('nickname');
+            } else {
+                echo 'Latest Comments of ';
+                the_author_meta('nickname');
+            }
+
+            ?>
+        </h3>
+        <?php
+        foreach ($comments as $comment) { ?>
+            <div class="author-comments">
+                <h3 class="post-title">
+                    <a href="<?php echo get_permalink($comment->comment_post_ID) ?>">
+                        <?php echo get_the_title($comment->comment_post_ID) ?>
+                    </a>
+                </h3>
+                <span class="post-date">
+                    <div class="fa fa-calendar fa-fw"></div>
+                    <?php echo 'Added On ' . mysql2date('l, F j, Y', $comment->comment_date); ?>
+                </span>
+                <div class="post-content">
+                    <?php echo $comment->comment_content; ?>
+                </div>
+            </div>
+    <?php }
+    } else {
+        echo 'This Author has no comments yet';
+    }
     ?>
 
 
