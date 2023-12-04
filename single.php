@@ -43,6 +43,39 @@
     <?php
         endwhile;
     endif; ?>
+    <!-- <div class="clearFix"></div> -->
+    <?php
+
+    // post_id         =>get_queried_object_id();
+    // categories Id's =>wp_get_post_categories(get_queried_object_id());
+
+    $random_posts_arguments = array(
+        'posts_per_page' => 5,
+        'orderby' => 'rand',
+        'category__in' => wp_get_post_categories(get_queried_object_id()),
+        'post__not_in' => array(get_queried_object_id())
+    );
+    $random_posts = new WP_Query($random_posts_arguments);
+    if ($random_posts->have_posts()) :
+        while ($random_posts->have_posts()) : $random_posts->the_post(); ?>
+            <div class="category-posts">
+                <h3 class="post-title">
+                    <a href=<?php the_permalink() ?>>
+                        <?php the_title(); ?>
+                    </a>
+                </h3>
+                <hr>
+            </div>
+            <!-- <div class="clearFix"></div> -->
+    <?php
+        endwhile;
+    else :
+        echo 'Sorry, no posts matched your criteria.';
+
+    endif;
+    wp_reset_postdata();
+
+    ?>
     <div class="author-section">
         <div class="row ">
 
