@@ -42,11 +42,11 @@
                         </p>
                     </div>
                 </div>
-
         <?php
             endwhile;
-        endif;
-        echo '<div class="post-pagination">';
+        endif; ?>
+        <!-- <div class="clearFix"></div> -->
+        <?php echo '<div class="post-pagination">';
         if (get_previous_posts_link()) { //check if previous page  exist
 
             previous_posts_link('<i class="fa-solid fa-chevron-left fa-fw fa-sm "></i>Prev');
