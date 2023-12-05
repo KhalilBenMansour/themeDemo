@@ -3,6 +3,30 @@ body {
   background-color: #eee;
 }
 /*end main rules*/
+/* start pagination numbers */
+.pagination-numbers {
+  margin: 5px auto 25px;
+  font-family: Tahoma, Arial;
+  font-size: 16px;
+}
+.pagination-numbers .page-numbers {
+  display: inline-block;
+  background-color: #8e8e8e;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.pagination-numbers .page-numbers.current {
+  background-color: #2980b9;
+}
+.pagination-numbers .page-numbers:hover {
+  text-decoration: none;
+  background-color: #2980b9;
+}
+
+/* end pagination numbers */
 /* start footer */
 .footer {
   background-color: #333;
