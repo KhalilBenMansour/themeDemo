@@ -46,7 +46,9 @@
             endwhile;
         endif; ?>
         <!-- <div class="clearFix"></div> -->
-        <?php echo '<div class="post-pagination">';
+        <?php
+        /*
+        echo '<div class="post-pagination">';
         if (get_previous_posts_link()) { //check if previous page  exist
 
             previous_posts_link('<i class="fa-solid fa-chevron-left fa-fw fa-sm "></i>Prev');
@@ -60,8 +62,11 @@
             echo '<span class="next-span">Next</span>';
         }
         echo '</div>';
+        */
         ?>
-
+    </div><!-- end row  -->
+    <div class="pagination-numbers">
+        <?php echo numbering_pagination(); ?>
     </div>
 
 </div>
