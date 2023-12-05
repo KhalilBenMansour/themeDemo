@@ -177,3 +177,20 @@ add_action('wp_enqueue_scripts', 'slug_add_styles');
 add_action('wp_enqueue_scripts', 'slug_add_scripts');
 //Register custom menu
 add_action('init', 'khalil_register_custom_menu');
+
+//numbering pagination
+function numbering_pagination()
+{
+    global $wp_query; //make WP_Query global
+    $all_pages = $wp_query->max_num_pages; //Get all posts
+    $current_page = max(1, get_query_var('paged')); //get current page
+    if ($all_pages > 1) {
+        return paginate_links(array(
+            'base' => get_pagenum_link() . '%_%',
+            'format' => 'page/%#%',
+            'current' => $current_page,
+            'mid-size' => 1
+        ));
+    }
+    echo $current_page;
+}
