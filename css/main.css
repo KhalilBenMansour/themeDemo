@@ -96,6 +96,29 @@ body {
 }
 
 /* end main posts  */
+/* start category posts*/
+.category-information {
+  background-color: #fff;
+  margin: 20px 15px;
+  border: 1px solid #d8d8d8;
+  padding: 0;
+  flex-shrink: 1;
+}
+.category-information h1 {
+  margin: 20px 0;
+  font-weight: bold;
+  color: #9c9c9c;
+}
+.category-information p {
+  font-size: 18px;
+  color: #777;
+  margin: 0;
+}
+.category-information .cat-stats {
+  color: #a9a9a9;
+}
+
+/* end category posts */
 /* start single post */
 .post-page .main-post {
   position: relative;
