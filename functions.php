@@ -157,8 +157,11 @@ function khalil_excerpt_custom_length()
 {
     if (is_author()) {
         return 20;
+    } else if (is_category()) {
+        return 30;
+    } else {
+        return 40;
     }
-    return 40;
 }
 add_filter('excerpt_length', 'khalil_excerpt_custom_length');
 
