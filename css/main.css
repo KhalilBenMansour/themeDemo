@@ -379,3 +379,18 @@ I .comments-list .comment .says {
 }
 
 /* end authot page  */
+.page-not-found img {
+  margin-top: 20px;
+  width: 200px;
+}
+
+.page-not-found h1 {
+  font-weight: bold;
+  font-size: 5rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+.page-not-found .lead {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
