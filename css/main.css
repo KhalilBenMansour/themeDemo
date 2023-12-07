@@ -119,6 +119,14 @@ body {
 }
 
 /* end category posts */
+/* Start php category  */
+.php-category .post-title {
+  margin-top: 1rem !important;
+}
+.php-category .post-content {
+  margin-top: 1rem !important;
+}
+/* end php category  */
 /* start single post */
 .post-page .main-post {
   position: relative;
