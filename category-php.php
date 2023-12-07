@@ -69,7 +69,15 @@
             endif; ?>
         </div><!--end col-md-9-->
         <div class="col-md-3">
-            sidebar
+            <div class="php-sidebar">
+                <?php
+                if (is_active_sidebar('sidebar-main')) {
+                    dynamic_sidebar('sidebar-main');
+                } else {
+                    echo "is not ok";
+                }
+                ?>
+            </div>
         </div><!--end col-md-3-->
     </div><!-- end row  -->
     <div class="pagination-numbers">
