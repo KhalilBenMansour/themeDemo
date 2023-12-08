@@ -157,8 +157,11 @@ function khalil_excerpt_custom_length()
 {
     if (is_author()) {
         return 20;
+    } else if (is_category()) {
+        return 30;
+    } else {
+        return 40;
     }
-    return 40;
 }
 add_filter('excerpt_length', 'khalil_excerpt_custom_length');
 
@@ -194,3 +197,19 @@ function numbering_pagination()
     }
     echo $current_page;
 }
+
+// Register sidebar
+function khalil_main_sidebar()
+{
+    register_sidebar(array(
+        'name' => 'Main Sidebar',
+        'id' => 'sidebar-main',
+        'description' => 'Main Sidebar that appears everywhere',
+        'class' => 'main-sidebar',
+        'before_widget' => '<div class="widget-content">',
+        'after_widget' => '</div>',
+        'before_title ' => '<h3 class="widget-title">',
+        'after_title ' => '</h3>',
+    ));
+}
+add_action('widgets_init', 'khalil_main_sidebar');
