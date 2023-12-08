@@ -71,11 +71,13 @@
         <div class="col-md-3">
             <div class="php-sidebar">
                 <?php
-                if (is_active_sidebar('sidebar-main')) {
-                    dynamic_sidebar('sidebar-main');
-                } else {
-                    echo "is not ok";
-                }
+
+                // if (is_active_sidebar('sidebar-main')) {
+                //     dynamic_sidebar('sidebar-main');
+                // } else {
+                //     echo "dynamic sidebar not activated";
+                // }
+                get_sidebar('php');
                 ?>
             </div>
         </div><!--end col-md-3-->
