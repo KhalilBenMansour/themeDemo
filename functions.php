@@ -213,3 +213,10 @@ function khalil_main_sidebar()
     ));
 }
 add_action('widgets_init', 'khalil_main_sidebar');
+
+function khalil_remove_paragraph($content)
+{
+    remove_filter('the_content', 'wpautop');
+    return $content;
+}
+add_filter('the_content', 'khalil_remove_paragraph', 0);
