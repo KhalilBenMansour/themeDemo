@@ -439,6 +439,7 @@ I .comments-list .comment .says {
 }
 
 /* end authot page  */
+/* start page  not found */
 .page-not-found img {
   margin-top: 20px;
   width: 200px;
@@ -454,3 +455,20 @@ I .comments-list .comment .says {
   font-size: 2rem;
   margin-bottom: 40px;
 }
+/* end page  not found */
+/* start navbar  */
+.navbar {
+  margin-bottom: 0;
+}
+/* end navbar  */
+/* stat breadcrumb */
+.breadcrumbs-holder {
+  background-color: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+.breadcrumbs-holder .breadcrumb {
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+/* end breadcrumb */
